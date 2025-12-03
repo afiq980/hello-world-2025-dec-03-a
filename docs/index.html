@@ -1,5 +1,418 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Electronics Singapore - Leading Electronics Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<h2>This is our company website</h2>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
 
-<p>So professional!</p>
+        header {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #64b5f6;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ff9800;
+            color: white;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-button:hover {
+            background: #f57c00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a237e;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #ff9800;
+            margin: 1rem auto 0;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            color: #1a237e;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .about-section {
+            background: #f5f5f5;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: #1a237e;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transform: scale(1.02);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h4 {
+            color: #1a237e;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: #1a237e;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .contact-section {
+            background: white;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #ff9800;
+        }
+
+        .contact-card h4 {
+            color: #1a237e;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav>
+            <div class="logo">⚡ Merry Electronics</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Merry Electronics Singapore</h1>
+            <p>Your Trusted Partner in Premium Electronics Solutions</p>
+            <button class="cta-button">Get Started</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>Quality Excellence</h3>
+                <p>Premium components and rigorous testing ensure the highest standards of quality in every product.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Innovation</h3>
+                <p>Stay ahead with cutting-edge technology and forward-thinking solutions for tomorrow's challenges.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤝</div>
+                <h3>Customer Support</h3>
+                <p>Dedicated support team ready to assist you 24/7 with any questions or concerns.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast Delivery</h3>
+                <p>Efficient logistics and warehousing ensure quick and reliable delivery across Singapore and region.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2 class="section-title">About Merry Electronics</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Leading Electronics Provider in Singapore</h3>
+                    <p>Established with a commitment to excellence, Merry Electronics Singapore has been a trusted name in the electronics industry for over a decade.</p>
+                    <p>We specialize in sourcing, distributing, and supporting premium electronic components and solutions for businesses of all sizes.</p>
+                    <p>Our mission is to deliver exceptional value through quality products, competitive pricing, and outstanding customer service.</p>
+                </div>
+                <div class="about-text">
+                    <h3>Our Expertise</h3>
+                    <p>✓ Electronic Components & Parts</p>
+                    <p>✓ Industrial Electronics Solutions</p>
+                    <p>✓ Consumer Electronics Distribution</p>
+                    <p>✓ Custom Integration Services</p>
+                    <p>✓ Technical Support & Consultation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="container" id="products">
+        <h2 class="section-title">Our Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">📱</div>
+                <div class="product-info">
+                    <h4>Mobile & Computing</h4>
+                    <p>Latest smartphones, tablets, and computing devices with top-tier performance.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🔌</div>
+                <div class="product-info">
+                    <h4>Power Solutions</h4>
+                    <p>High-efficiency power supplies and energy management systems.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">📡</div>
+                <div class="product-info">
+                    <h4>Communication</h4>
+                    <p>Networking equipment and communication modules for seamless connectivity.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🎛️</div>
+                <div class="product-info">
+                    <h4>Industrial Components</h4>
+                    <p>Robust components designed for demanding industrial applications.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">🛡️</div>
+                <div class="product-info">
+                    <h4>Security Systems</h4>
+                    <p>Advanced security and surveillance solutions for protection and monitoring.</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">♻️</div>
+                <div class="product-info">
+                    <h4>Sustainable Solutions</h4>
+                    <p>Eco-friendly electronics with emphasis on sustainability and energy efficiency.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h4>📍 Address</h4>
+                    <p>Singapore</p>
+                </div>
+                <div class="contact-card">
+                    <h4>📧 Email</h4>
+                    <p>info@merryelecs.sg</p>
+                </div>
+                <div class="contact-card">
+                    <h4>📱 Phone</h4>
+                    <p>+65 1234 5678</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Merry Electronics Singapore. All rights reserved.</p>
+        <p>Your trusted partner in electronics excellence</p>
+    </footer>
+</body>
+</html>
