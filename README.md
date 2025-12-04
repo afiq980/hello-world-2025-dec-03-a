@@ -7,3 +7,9 @@ A repository to learn about GitHub Foundations certification.
 1. first
 1. second
 1. third
+
+```python
+print('hello')
+```
+
+`print('hello')`
